@@ -1,2 +1,1 @@
-# sirius-practica
-test
+# Sirius - Práctica Docker + GitHub
