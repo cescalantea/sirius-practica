@@ -1,0 +1,17 @@
+# Variables de entorno (NUNCA subir a GitHub)
+.env
+
+# Archivos de Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Archivos de Docker
+*.log
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+desktop.ini

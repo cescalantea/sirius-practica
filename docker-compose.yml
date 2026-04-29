@@ -1,11 +1,11 @@
-version: '3.8'
-
 services:
 
   web:
     build: ./app
     ports:
-      - "8080:80"
+      - "${WEB_PORT}:80"
+    environment:
+      - AMBIENTE=${AMBIENTE}
     networks:
       - sirius-network
 
@@ -14,7 +14,10 @@ services:
     volumes:
       - ./api:/usr/share/nginx/html
     ports:
-      - "8081:80"
+      - "${API_PORT}:80"
+    environment:
+      - AMBIENTE=${AMBIENTE}
+      - DB_PASSWORD=${DB_PASSWORD}
     networks:
       - sirius-network
 
