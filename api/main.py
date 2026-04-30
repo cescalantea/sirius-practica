@@ -42,5 +42,20 @@ def get_eventos():
 
     return jsonify(eventos)
 
+@app.route("/salud")
+def salud():
+    try:
+        conn = get_db_connection()
+        conn.close()
+        db_estado = "conectada"
+    except:
+        db_estado = "sin conexión"
+
+    return jsonify({
+        "api": "activa",
+        "base_de_datos": db_estado,
+        "version": "1.0.0"
+    })
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
